@@ -1,0 +1,140 @@
+
+        /* Custom CSS for Animations and Specific Styles */
+
+        /* Hero Section Text Shadow for readability over particles */
+        .text-shadow-lg {
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Timeline specific styling */
+        .md\:left-timeline {
+            position: relative;
+            display: flex;
+            justify-content: flex-start;
+        }
+        @media (min-width: 768px) {
+            .md\:left-timeline {
+                justify-content: flex-end;
+            }
+        }
+
+        .md\:right-timeline {
+            position: relative;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        /* Timeline dot */
+        .md\:left-timeline > div:first-child::after {
+            content: '';
+            position: absolute;
+            width: 1rem; /* w-4 */
+            height: 1rem; /* h-4 */
+            background-color: #7C3AED; /* bg-violet-600 */
+            border-radius: 9999px; /* rounded-full */
+            top: 50%;
+            right: -0.5rem; /* -right-2 */
+            transform: translateY(-50%) translateX(-50%); /* -translate-y-1/2 -translate-x-1/2 */
+            left: 100%; /* Position relative to parent for the dot */
+            display: none; /* hidden */
+        }
+        @media (min-width: 768px) {
+            .md\:left-timeline > div:first-child::after {
+                display: block;
+            }
+        }
+        .dark .md\:left-timeline > div:first-child::after {
+            background-color: #8B5CF6; /* dark:bg-neon-500 */
+        }
+
+        .md\:right-timeline > div:first-child::after {
+            content: '';
+            position: absolute;
+            width: 1rem; /* w-4 */
+            height: 1rem; /* h-4 */
+            background-color: #7C3AED; /* bg-violet-600 */
+            border-radius: 9999px; /* rounded-full */
+            top: 50%;
+            left: -0.5rem; /* -left-2 */
+            transform: translateY(-50%) translateX(50%); /* -translate-y-1/2 translate-x-1/2 */
+            right: 100%; /* Position relative to parent for the dot */
+            display: none; /* hidden */
+        }
+        @media (min-width: 768px) {
+            .md\:right-timeline > div:first-child::after {
+                display: block;
+            }
+        }
+        .dark .md\:right-timeline > div:first-child::after {
+            background-color: #8B5CF6; /* dark:bg-neon-500 */
+        }
+        
+
+
+        /* Buttons */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem; /* px-4 py-2 */
+            background-color: #7C3AED; /* bg-violet-600 */
+            color: #ffffff; /* text-white */
+            border-radius: 0.375rem; /* rounded-md */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); /* shadow-md */
+            transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+            transition-duration: 200ms;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); /* transition-colors duration-200 */
+        }
+        .btn-primary:hover {
+            background-color: #6D28D9; /* hover:bg-violet-700 */
+        }
+        .dark .btn-primary {
+            background-color: #8B5CF6; /* dark:bg-neon-500 */
+        }
+        .dark .btn-primary:hover {
+            background-color: #7C3AED; /* dark:hover:bg-neon-600 */
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem; /* px-4 py-2 */
+            background-color: #E5E7EB; /* bg-gray-200 */
+            color: #374151; /* text-gray-800 */
+            border-radius: 0.375rem; /* rounded-md */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); /* shadow-md */
+            transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+            transition-duration: 200ms;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); /* transition-colors duration-200 */
+        }
+        .btn-secondary:hover {
+            background-color: #D1D5DB; /* hover:bg-gray-300 */
+        }
+        .dark .btn-secondary {
+            background-color: #4B5563; /* dark:bg-gray-700 */
+            color: #E5E7EB; /* dark:text-gray-200 */
+        }
+        .dark .btn-secondary:hover {
+            background-color: #374151; /* dark:hover:bg-gray-600 */
+        }
+
+        /* Specific to mobile menu icon animation (optional) */
+        #mobile-menu-button.active .fa-bars {
+            transform: rotate(90deg);
+            transition: transform 0.3s ease-in-out;
+        }
+        #mobile-menu-button .fa-bars {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Custom styles for Particles.js canvas */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: transparent; /* particles.js will draw on top of this */
+            background-image: url(''); /* no background image for particles */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50% 50%;
+            z-index: 0; /* ensure it's behind content */
+        }
